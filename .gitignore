@@ -1,0 +1,10 @@
+node_modules/
+renders/
+*.mp4
+*.webm
+*.mov
+*.gif
+.DS_Store
+Thumbs.db
+*.log
+.hyperframes-cache/

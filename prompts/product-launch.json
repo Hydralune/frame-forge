@@ -1,0 +1,29 @@
+{
+  "id": "product-launch",
+  "version": "1",
+  "aspect": "16:9",
+  "pairsWith": ["storyboard", "shot-recipes", "design-critique", "render-pipeline"],
+  "prompts": [
+    {
+      "id": "hero-reveal",
+      "title": "Product hero, 8 s",
+      "durationSeconds": 8,
+      "when": "A single product shot has to feel expensive and end on a claim.",
+      "text": "Compose an 8-second product hero at 1920x1080. Shot 1 (0-3 s): product centred on a dark surface with a soft top-light gradient, product scales 1.04 to 1.0 over 3 s ease none so it breathes almost imperceptibly. Shot 2 (3-5.5 s): camera distance changes by moving to a 40% crop of the product, cut on a 120 ms white flash at 8% opacity, not a fade. Shot 3 (5.5-8 s): pull back out, product sits left, claim text right at 64 px entering with 0.4 s power3.out and holding. Total three shots, no more. Claim under 8 words."
+    },
+    {
+      "id": "three-states",
+      "title": "Three devices, three states",
+      "durationSeconds": 9,
+      "when": "The product has multiple surfaces and the point is coverage.",
+      "text": "Build a 9-second composition with three device frames arranged on a 12-column grid, centre device largest. Each device enters from 40 px below with opacity 0 to 1, staggered 0.18 s from the centre outward, each over 0.5 s power3.out. Inside each device, reveal a distinct screen state with a 0.35 s clip-path wipe starting 0.6 s after its own mount. Then hold everything for 3 s with only a 1% ambient float on the centre device. Never scale all three simultaneously — the eye needs one entry order."
+    },
+    {
+      "id": "feature-loop",
+      "title": "Feature highlight loop, 6 s",
+      "durationSeconds": 6,
+      "when": "A single UI interaction is the message and it must loop cleanly.",
+      "text": "Create a 6-second seamless loop showing one UI interaction: a cursor moves to a control, presses, and a result appears. Cursor path is a two-segment bezier, 0.9 s, ease power2.inOut; press state 0.12 s; result enters 0.3 s later. Hold the result 2.2 s with a 2% pulse on the new element. Return every property to its start value in the final 0.8 s so the last frame equals the first: same cursor position, same opacity, same scroll offset. Root data-duration must equal exactly 6."
+    }
+  ]
+}

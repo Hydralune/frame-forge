@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=__WIDTH__, height=__HEIGHT__" />
+    <title>__COMPOSITION_ID__</title>
+    <!-- GSAP is the timeline the renderer seeks through. Pin the version. -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --bg: #0b0d10;
+        --fg: #f2f4f7;
+        --muted: #9aa4b2;
+        --accent: #ff6a3d;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        width: __WIDTH__px;
+        height: __HEIGHT__px;
+        overflow: hidden;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+      .clip { position: absolute; }
+      #title {
+        left: 8%;
+        top: 38%;
+        font-size: 132px;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+      #bar {
+        left: 8%;
+        top: 60%;
+        width: 22px;
+        height: 180px;
+        background: linear-gradient(180deg, var(--accent), #ff3d6e);
+        transform-origin: top center;
+      }
+      #sub {
+        left: 11.5%;
+        top: 61%;
+        font-size: 44px;
+        font-weight: 400;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+      The composition root declares the canvas and total duration.
+      Every timed element needs data-start, data-duration, data-track-index
+      and class="clip".
+    -->
+    <div
+      id="root"
+      data-composition-id="__COMPOSITION_ID__"
+      data-start="0"
+      data-duration="__DURATION__"
+      data-width="__WIDTH__"
+      data-height="__HEIGHT__"
+    >
+      <div id="bar" class="clip" data-start="0" data-duration="__DURATION__" data-track-index="1"></div>
+      <h1 id="title" class="clip" data-start="0" data-duration="__DURATION__" data-track-index="2">
+        __COMPOSITION_ID__
+      </h1>
+      <p id="sub" class="clip" data-start="0.4" data-duration="__DURATION__" data-track-index="2">
+        edit index.html, then render
+      </p>
+    </div>
+
+    <script>
+      // The timeline MUST be paused and registered under the composition id.
+      // The renderer seeks it frame by frame; nothing here may use wall-clock time
+      // or randomness, or the output stops being reproducible.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      tl.from("#title", { opacity: 0, y: 56, duration: 0.7, ease: "power3.out" }, 0)
+        .from("#bar", { scaleY: 0, duration: 0.5, ease: "power2.out" }, 0.1)
+        .from("#sub", { opacity: 0, x: -24, duration: 0.6, ease: "power2.out" }, 0.45)
+        .to({}, { duration: 0.6 }, Math.max(0, Number("__DURATION__") - 0.8));
+
+      window.__timelines["__COMPOSITION_ID__"] = tl;
+    </script>
+  </body>
+</html>

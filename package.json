@@ -1,0 +1,41 @@
+{
+  "name": "frame-forge",
+  "version": "0.1.0",
+  "description": "Agent-native design and motion skill library with a deterministic HTML-to-MP4 render pipeline",
+  "license": "MIT",
+  "type": "module",
+  "private": false,
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "agent-skills",
+    "html-to-video",
+    "motion-design",
+    "gsap",
+    "video-rendering",
+    "ffmpeg",
+    "design-system",
+    "prompt-engineering"
+  ],
+  "scripts": {
+    "doctor": "node tools/doctor.mjs",
+    "scaffold": "node tools/scaffold.mjs",
+    "render": "node tools/render.mjs",
+    "verify": "node tools/verify-skills.mjs",
+    "install-skills": "node tools/install-skills.mjs",
+    "fetch-upstream": "node tools/fetch-upstream.mjs",
+    "test": "node tools/verify-skills.mjs && node tools/doctor.mjs"
+  },
+  "devDependencies": {
+    "hyperframes": "^0.8.1"
+  },
+  "peerDependencies": {
+    "gsap": "^3.14.0"
+  },
+  "peerDependenciesMeta": {
+    "gsap": {
+      "optional": true
+    }
+  }
+}

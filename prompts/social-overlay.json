@@ -1,0 +1,29 @@
+{
+  "id": "social-overlay",
+  "version": "1",
+  "aspect": "9:16",
+  "pairsWith": ["motion-language", "asset-pipeline", "render-pipeline"],
+  "prompts": [
+    {
+      "id": "karaoke-caption",
+      "title": "Vertical karaoke captions",
+      "durationSeconds": 6,
+      "when": "Talking-head clip needs synced captions in 9:16.",
+      "text": "Build a 6-second 1080x1920 caption overlay: two lines maximum, centred at 62% height, base text 56 px weight 700 in white with a 2 px dark stroke for legibility over any footage. Words highlight in groups of 3 rather than one by one — one-word highlighting reads as a strobe. Group change every 0.4 s with the active group scaling to 1.03 over 0.12 s and back. Background stays transparent (export WebM with alpha). Keep 12% safe margin top and bottom; the platform UI eats it."
+    },
+    {
+      "id": "chat-overlay",
+      "title": "Chat messages stacking",
+      "durationSeconds": 5,
+      "when": "Simulating a conversation to show social proof or a product flow.",
+      "text": "5-second chat overlay for 9:16: three message bubbles enter from the bottom, each rising 28 px with opacity 0 to 1 in 0.35 s power2.out, staggered 1.1 s so each is readable before the next. Incoming bubbles align left in neutral grey, the user's reply aligns right in one accent colour. Each bubble has a 0.15 s tail (triangular) that appears with it. After the third bubble, hold 1.2 s. Text must be short enough to fit one bubble without wrapping beyond 2 lines."
+    },
+    {
+      "id": "notification-pop",
+      "title": "System notification, 3 s",
+      "durationSeconds": 3,
+      "when": "A beat of realism — a message, a payment, an alert.",
+      "text": "3-second notification overlay: a rounded card 520x140 drops from the top edge (translateY -160 to 0) over 0.4 s back.out(1.4), holds 1.6 s, then slides back up 0.3 s power2.in. Card has an icon square, a bold title at 28 px and a body line at 22 px. On entry only, a 1 px accent border flashes once (opacity 0 to 1 to 0.6 over 0.3 s). No other motion during the hold. Card must stay within the top 20% of the frame."
+    }
+  ]
+}

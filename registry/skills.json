@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-29",
+  "policies": {
+    "original": "Written for this repository. MIT.",
+    "redistributed": "Third-party, redistributable license. The directory must keep LICENSE + SOURCE.md and a row in NOTICE.md.",
+    "upstream-pointer": "Not redistributed. Name, description and URL only; tools/fetch-upstream.mjs retrieves it locally."
+  },
+  "skills": [
+    {
+      "path": "skills/render-pipeline",
+      "name": "render-pipeline",
+      "provenance": "original",
+      "category": "rendering",
+      "description": "Author a video as one HTML composition and render it deterministically to MP4; defines timing attributes, the paused-timeline contract and failure modes."
+    },
+    {
+      "path": "skills/motion-language",
+      "name": "motion-language",
+      "provenance": "original",
+      "category": "animation-motion",
+      "description": "Durations, easing families, stagger, beat mapping and pacing so motion reads as intentional."
+    },
+    {
+      "path": "skills/design-critique",
+      "name": "design-critique",
+      "provenance": "original",
+      "category": "design-review",
+      "description": "Measurable pre-delivery gate: hierarchy, contrast ratios, spacing rhythm, type scale, colour discipline, motion restraint."
+    },
+    {
+      "path": "skills/shot-recipes",
+      "name": "shot-recipes",
+      "provenance": "original",
+      "category": "motion",
+      "description": "Twelve DOM+timeline shot patterns: hook, stat hit, comparison, timeline, quote, product hero, list, chart race, transition, logo, CTA, loop."
+    },
+    {
+      "path": "skills/storyboard",
+      "name": "storyboard",
+      "provenance": "original",
+      "category": "workflow",
+      "description": "Brief to reviewable shot table to renderable composition, with a review loop and delivery checklist."
+    },
+    {
+      "path": "skills/asset-pipeline",
+      "name": "asset-pipeline",
+      "provenance": "original",
+      "category": "assets",
+      "description": "Audio placement and levels, image sizing, transparent overlays and ffmpeg post-processing for deterministic renders."
+    },
+
+    {
+      "path": "third-party/gsap-core",
+      "name": "gsap-core",
+      "provenance": "redistributed",
+      "license": "MIT",
+      "description": "GSAP core API: tweens, easing, stagger, matchMedia."
+    },
+    {
+      "path": "third-party/gsap-timeline",
+      "name": "gsap-timeline",
+      "provenance": "redistributed",
+      "license": "MIT",
+      "description": "GSAP timelines: sequencing, position parameter, nesting, playback."
+    },
+    {
+      "path": "third-party/gsap-plugins",
+      "name": "gsap-plugins",
+      "provenance": "redistributed",
+      "license": "MIT",
+      "description": "GSAP plugins: ScrollTo, Flip, Draggable, SplitText, SVG, CustomEase and friends."
+    },
+    {
+      "path": "third-party/gsap-scrolltrigger",
+      "name": "gsap-scrolltrigger",
+      "provenance": "redistributed",
+      "license": "MIT",
+      "description": "Scroll-linked animation, pinning and scrub."
+    },
+    {
+      "path": "third-party/animate",
+      "name": "animate",
+      "provenance": "redistributed",
+      "license": "MIT",
+      "description": "Interface animation practice: easing, springs, interruption, exits, reduced motion."
+    },
+    {
+      "path": "third-party/design-taste-frontend",
+      "name": "design-taste-frontend",
+      "provenance": "redistributed",
+      "license": "MIT",
+      "description": "Anti-slop frontend direction for landing pages, portfolios and redesigns."
+    },
+    {
+      "path": "third-party/image-to-code",
+      "name": "image-to-code",
+      "provenance": "redistributed",
+      "license": "MIT",
+      "description": "Generate the design image first, analyse it, then implement to match."
+    },
+    {
+      "path": "third-party/ui-animation",
+      "name": "ui-animation",
+      "provenance": "redistributed",
+      "license": "MIT",
+      "description": "Reconstruct easing, springs and gestures from a recording with bundled tooling."
+    },
+    {
+      "path": "third-party/web-clone",
+      "name": "web-clone",
+      "provenance": "redistributed",
+      "license": "MIT",
+      "description": "Website reconstruction methodology with recon, crawl, source-map and visual-diff scripts."
+    },
+    {
+      "path": "third-party/motion-lab",
+      "name": "motion-lab",
+      "provenance": "redistributed",
+      "license": "MIT",
+      "description": "160 motion case reference library covering basic, text, interaction and advanced effects."
+    },
+    {
+      "path": "third-party/frontend-design",
+      "name": "frontend-design",
+      "provenance": "redistributed",
+      "license": "Apache-2.0",
+      "description": "Frontend interface construction guidance."
+    },
+
+    {
+      "path": "third-party/remotion-pointer",
+      "name": "remotion",
+      "provenance": "upstream-pointer",
+      "upstream": "https://github.com/remotion-dev/remotion",
+      "fetch": { "type": "git" },
+      "description": "React-based programmatic video. Pointer only: fetch the upstream skills from the project's own repository."
+    },
+    {
+      "path": "third-party/threejs-pointer",
+      "name": "threejs",
+      "provenance": "upstream-pointer",
+      "upstream": "https://github.com/mrdoob/three.js",
+      "fetch": { "type": "git" },
+      "description": "WebGL/3D scenes for compositions. Pointer only."
+    },
+    {
+      "path": "third-party/playwright-pointer",
+      "name": "playwright",
+      "provenance": "upstream-pointer",
+      "upstream": "https://github.com/microsoft/playwright",
+      "fetch": { "type": "git" },
+      "description": "Browser automation used by several capture scripts. Pointer only."
+    }
+  ]
+}

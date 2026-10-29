@@ -1,0 +1,29 @@
+{
+  "id": "explainer",
+  "version": "1",
+  "aspect": "16:9",
+  "pairsWith": ["storyboard", "shot-recipes", "motion-language", "design-critique"],
+  "prompts": [
+    {
+      "id": "concept-triangle",
+      "title": "Concept explainer, 12 s",
+      "durationSeconds": 12,
+      "when": "An abstract idea needs a visual model, no product screenshots available.",
+      "text": "Explain one abstract concept in 12 seconds using only geometry and type — no stock imagery. Structure: (1) 0-3 s, three labelled nodes appear at triangle vertices with 0.12 s stagger, connectors draw on with scaleX over 0.5 s; (2) 3-7 s, emphasise one node by dimming the other two to 35% opacity, and surface a one-line definition beside it; (3) 7-11 s, show the relationship changing: one connector thickens and the label updates; (4) 11-12 s, hold on the resolved diagram, no motion. Maximum 12 words total on screen at any moment."
+    },
+    {
+      "id": "before-after",
+      "title": "Before / after mechanism",
+      "durationSeconds": 8,
+      "when": "The value is a reduction or a simplification that a comparison makes obvious.",
+      "text": "Build an 8-second split comparison. Left panel mounts with 6 boxes and 11 connectors (label it 'before'), right panel with 3 boxes and 4 connectors ('after'). Left enters sliding from the left over 0.45 s, right from the right with the same duration starting 0.1 s later — they must not arrive together. At 3.5 s, draw a vertical divider between them with scaleY. From 4 s, the extra boxes on the left fade to 20% opacity one by one (stagger 0.15) while the right side gets a subtle accent outline. Hold the contrast for 2 s. Counts on screen must be exactly the counts drawn."
+    },
+    {
+      "id": "step-sequence",
+      "title": "Three-step sequence",
+      "durationSeconds": 9,
+      "when": "A process has a fixed number of steps and order matters.",
+      "text": "Create a 9-second three-step explainer: a horizontal rail with three numbered stops. The rail draws left to right over 0.7 s; stop 1 pops in, its caption follows 0.2 s later; then the rail continues to stop 2, caption, stop 3, caption — each leg 2.4 s, motion never overlapping with a caption read. Keep captions to 5 words. The currently active stop is at full opacity with an accent dot; completed stops dim to 60%; the upcoming stop sits at 30% and only becomes opaque when reached. End with all three visible for 1 s."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "data-story",
+  "version": "1",
+  "aspect": "16:9",
+  "pairsWith": ["shot-recipes", "design-critique", "motion-language"],
+  "prompts": [
+    {
+      "id": "chart-race",
+      "title": "Bar race, 6 bars",
+      "durationSeconds": 7,
+      "when": "Ranking change is the insight, not absolute values.",
+      "text": "Animate a 6-bar horizontal bar chart at 1920x1080. Axis and category labels mount statically first (no animation on labels, they are reference). Bars grow with scaleX from 0 to their value, transform-origin left, staggered 0.14 s, each 0.6 s power2.out. Values count up in sync with their bar over the same 0.6 s. At 4.5 s, the winner bar changes accent colour and its value scales to 1.08 in 0.25 s then settles. Keep the chart area inside the middle 80% of the frame; bars must never overlap their labels."
+    },
+    {
+      "id": "counter-hype",
+      "title": "Counter with unit and context",
+      "durationSeconds": 5,
+      "when": "A single accumulating number carries the emotional payload.",
+      "text": "5-second counter piece: one number at 180 px counting from 0 to its final value over 2.2 s with a decelerating curve (power4.out so most digits land early), then locked still. Under it a unit label at 32 px, and below that a one-line context at 22 px in muted grey appearing at 2.4 s. Digits must use tabular figures so the width never jumps. Add no other motion: the number is the event. Final value must be the true value — do not round for effect without saying so in the context line."
+    },
+    {
+      "id": "route-map",
+      "title": "Route on a simplified map",
+      "durationSeconds": 8,
+      "when": "Sequence of locations or a journey needs spatial framing.",
+      "text": "Draw a simplified abstract map (no real geography): a muted background plate, 5 nodes, one dashed route. Route draws with stroke-dashoffset from start to end over 3.5 s ease power1.inOut. Each node scales in as the line reaches it (0.3 s back.out(1.2)), its label following 0.15 s later. Distances between nodes should read as travel time: put the slow leg further apart. At 5.5 s, highlight the destination with an accent ring that pulses once (scale 1 to 1.25 to 1 over 0.8 s) and stop. Hold 1.5 s."
+    }
+  ]
+}

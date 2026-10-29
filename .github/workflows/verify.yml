@@ -1,0 +1,56 @@
+name: verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  provenance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # The verification tools have no dependencies, so this gate is fast and
+      # cannot be broken by a network failure in the registry.
+      - name: Verify skills (frontmatter, provenance, registry)
+        run: node tools/verify-skills.mjs
+
+      - name: Verify prompt packs
+        run: node tools/verify-prompts.mjs
+
+      - name: Refuse shipped video artefacts
+        run: |
+          if git ls-files | grep -Ei '\.(mp4|webm|mov|gif)$'; then
+            echo "::error::rendered media must not be committed"
+            exit 1
+          fi
+
+  render-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install engine and ffmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          npm ci --no-audit --no-fund
+
+      - name: Doctor
+        run: node tools/doctor.mjs
+
+      - name: Scaffold and render 1 s at draft quality
+        run: |
+          node tools/scaffold.mjs smoke --duration 1 --dir "$RUNNER_TEMP"
+          node tools/render.mjs "$RUNNER_TEMP/smoke" --out "$RUNNER_TEMP/smoke.mp4" \
+            --fps 24 --quality draft --workers 1
+          test -s "$RUNNER_TEMP/smoke.mp4"

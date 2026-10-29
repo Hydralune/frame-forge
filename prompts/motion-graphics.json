@@ -1,0 +1,36 @@
+{
+  "id": "motion-graphics",
+  "version": "1",
+  "aspect": "16:9",
+  "pairsWith": ["storyboard", "shot-recipes", "motion-language", "render-pipeline"],
+  "prompts": [
+    {
+      "id": "logo-sting",
+      "title": "Logo sting, 4 s",
+      "durationSeconds": 4,
+      "when": "A brand mark needs to land and stop. No narration, no product.",
+      "text": "Build a 4-second logo sting as one HTML composition at 1920x1080. Stage: near-black canvas (#0b0d10), the mark centred at 22% of frame width. Reveal the mark with clip-path inset from the left over 0.55 s ease power3.out, hold 1.0 s in silence, then a single 24 px rule slides under it from 0 to 100% width in 0.35 s power2.out. Wordmark fades in 0.2 s after the rule completes. Nothing else moves. Timeline must be paused, registered under the composition id, durations authored as absolute positions."
+    },
+    {
+      "id": "stat-hit",
+      "title": "One stat, one claim",
+      "durationSeconds": 5,
+      "when": "The message is a single number that changes a decision.",
+      "text": "Make a 5-second stat hit: 1920x1080, one number at 220 px weight 800 centred, one caption line at 40 px beneath it, one source line at 20 px bottom-left. The number scales 0.92 to 1.0 in 0.5 s power4.out and then holds completely still for 3.5 s. Caption fades in at 0.6 s, source at 1.3 s. Use one accent colour on the number only, everything else neutral grey. No background motion, no gradient shift, no particles."
+    },
+    {
+      "id": "kinetic-type",
+      "title": "Kinetic typography line",
+      "durationSeconds": 6,
+      "when": "A sentence is the whole piece and reading speed drives the rhythm.",
+      "text": "Author a 6-second kinetic typography piece where a single sentence arrives in three groups, one idea per group. Groups enter on 0, 2.0 and 4.0 s with stagger 0.06 between words, each word rising 24 px with opacity 0 to 1 over 0.32 s power2.out. The finished group stays perfectly still while the next arrives — no continuous drift. Between groups, cut the background tone by one step so the eye registers a section change. Keep every line under 6 words."
+    },
+    {
+      "id": "lower-third",
+      "title": "Lower third for interview footage",
+      "durationSeconds": 4,
+      "when": "A name and role must appear over existing video without competing with it.",
+      "text": "Design a 4-second lower third meant to sit over footage: bottom-left, 8% inset, a solid accent bar 6 px wide by 64 px tall, name at 34 px weight 600, role at 20 px weight 400 muted. Bar grows scaleY 0 to 1 in 0.28 s power3.out, name slides in 16 px with fade over 0.34 s starting 0.08 s later, role follows 0.1 s after that. Hold 2.2 s, then reverse out in 0.24 s total, faster than the entrance. Export-ready for transparent WebM: no opaque background behind the card."
+    }
+  ]
+}

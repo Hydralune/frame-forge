@@ -1,0 +1,29 @@
+{
+  "id": "cinematic",
+  "version": "1",
+  "aspect": "16:9",
+  "pairsWith": ["storyboard", "shot-recipes", "design-critique", "motion-language"],
+  "prompts": [
+    {
+      "id": "cold-open",
+      "title": "Cold open, 6 s",
+      "durationSeconds": 6,
+      "when": "A longer piece needs to earn attention before it explains anything.",
+      "text": "6-second cold open with no text for the first 3 seconds. Shot 1 (0-3 s): near-black frame with one horizontal band of light at 30% height, the band's width easing from 0 to 100% over 2.5 s power1.inOut, everything else static. Shot 2 (3-5 s): the band collapses to a 2 px rule and a single word appears at 96 px with 0.4 s power3.out. Shot 3 (5-6 s): frame darkens by 40% to hand off to the next scene. No lens flares, no particles. The only colour is one warm accent on the rule."
+    },
+    {
+      "id": "quote-cadence",
+      "title": "Quote in three beats",
+      "durationSeconds": 7,
+      "when": "A line of copy deserves the whole frame.",
+      "text": "7-second quote piece: split one sentence into three beats, one beat visible at a time, centred, 72 px weight 500, max 7 words each. Beat transitions are cuts, not cross-fades: 120 ms of the frame going to full background before the next beat, so the eye resets. One word per beat may carry the accent colour — 3 accents total, no more. Add a fixed 20 px attribution bottom-right from 5.5 s. Background is one flat tone; do not animate it: the type is the motion."
+    },
+    {
+      "id": "end-card",
+      "title": "End card with single action",
+      "durationSeconds": 4,
+      "when": "The piece is over and the viewer needs one instruction.",
+      "text": "4-second end card: background flips from dark to light on frame 0 (a hard cut, deliberate). One claim at 56 px weight 700 top area, one action line at 28 px in an accent colour below it, and the mark at 14% width bottom-centre. Claim enters with 0.35 s power2.out; action appears 0.25 s later, mark 0.2 s after that. Everything then holds completely still for 2.5 s — an end card with continuing motion feels unresolved. Text must be readable as a still screenshot."
+    }
+  ]
+}
